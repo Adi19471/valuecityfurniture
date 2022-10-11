@@ -1,0 +1,37 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: white;
+}
+
+.img-display {
+    width: 350;
+    height: 350px;
+    border: 2px solid black;
+}
+
+.links-a {
+    font-size: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.links-a a {
+    text-decoration: none;
+    margin: 0px 10px;
+}
+
+.footer {
+    font-size: 20px;
+    font-family: cursive;
+    font-style: oblique;
+}
+
+.content {
+    font-size: 18px;
+    font-family: monospace;
+    font-stretch: expanded;
+}

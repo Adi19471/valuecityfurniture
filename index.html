@@ -1,0 +1,736 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/furniture.css">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+
+    <link rel="shortcut icon" href="data:image/jpeg;base64,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"
+        type="image/x-icon">
+    <title>~::valuecityfurniture::~</title>
+</head>
+
+<body>
+
+
+
+    <!-- As a link -->
+
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fa-1x  fixed-top">
+
+        <img src="https://www.valuecityfurniture.com/Content/ASI/assets/vcf-logo.svg?_dt=994d398" width="50px" height="30px" alt="">
+        <a class="navbar-brand" href="#">Furniture</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link mx-5" href=" # ">Home <span class="sr-only ">(current)</span></a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link mx-5" href="#">Mattresses</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link  mx-5" href=" # ">Sales</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link mx-5">Financing</a>
+                </li>
+
+                <li class="nav-item">
+                    <input type="search" placeholder="Search Item,Product" class="form-control mx-5">
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link  mx-5"><i class=" fas fa-heart "></i></a>
+                </li>
+
+                <li class="nav-item ">
+                    <a class="nav-link mx-5"><i class="fas fa-cart-arrow-down"></i></a>
+                </li>
+
+
+
+            </ul>
+            </ul>
+            </ul>
+        </div>
+    </nav>
+
+
+
+
+    <div class="container-fluid">
+        <h1 class="text=start">All Furniture</h1>
+        <hr>
+        <div class="text-white bg-white text-center    links-a">
+            <a href="">Living Room</a>
+            <a href="">Reclining</a>
+            <a href=""></a>
+            <a href="">Dining Room</a>
+            <a href="">Bedroom</a>
+            <a href="">Accents</a>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <input type="text" placeholder="Filter" class="form-group">
+                </div>
+            </div>
+
+
+
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <input type="text" placeholder="Best Matches" class="form-group">
+                </div>
+            </div>
+
+
+
+
+            <div class="col-sm-4">
+                <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+                    <div class="btn-group mr-2" role="group" aria-label="First group">
+                        <button type="button" class="btn btn-secondary">1</button>
+                        <button type="button" class="btn btn-secondary">2</button>
+                        <button type="button" class="btn btn-secondary">3</button>
+                        <button type="button" class="btn btn-secondary">4</button>
+                    </div>
+                    <div class="btn-group mr-2" role="group" aria-label="Second group">
+                        <button type="button" class="btn btn-secondary">5</button>
+                        <button type="button" class="btn btn-secondary">6</button>
+                        <button type="button" class="btn btn-secondary">7</button>
+                    </div>
+                    <div class="btn-group" role="group" aria-label="Third group">
+                        <button type="button" class="btn btn-secondary">8</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row mt-4">
+            <div class="col-sm-4">
+                <div class="card">
+                    <img class="img-display" src="https://rukminim1.flixcart.com/image/832/832/l0zm64w0/office-study-chair/c/7/b/-original-imagcnvjcbf82yeg.jpeg?q=70" alt=" ">
+
+
+
+                    <div class="btn-group mt-xl-2" role="group" aria-label="Basic example">
+                        <button type="button" class="btn btn-dark p-lg-3"></button>
+                        <button type="button" class="btn btn-secondary p-lg-3"></button>
+
+                    </div>
+
+                    <span>Bestseller
+                        New Arrival</span>
+                    <del>was
+                        ₹4,499.94</del>
+                    <div class="button">
+                        ₹3,824.95 save 15%
+                    </div>
+
+                    <small>plus 12 month special financing ✝︎</small>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <img src=" https://www.valuecityfurniture.com/Content/ASI/images/designer-looks-logo.jpg" class="img-thumbnail" alt="">
+                        </div>
+                        <div class="col-sm-9">
+                            Hartley 6-Piece Dual-Power Reclining Sectional with 3 Reclining Seats ComforTECH™
+                        </div>
+                        <span class="" style="margin-left:30px">ComforTECH™</span>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div class="col-sm-4">
+                <div class="card">
+                    <img class="img-display" src="https://rukminim1.flixcart.com/image/832/832/kwtkxow0/office-study-chair/r/u/r/foam-multi-functional-ergonomic-gaming-chair-with-lumbar-support-original-imag9f29y7ckhqpf.jpeg?q=70" alt=" ">
+
+
+
+                    <div class="btn-group mt-xl-2" role="group" aria-label="Basic example">
+                        <button type="button" class="btn btn-dark p-lg-3"></button>
+                        <button type="button" class="btn btn-secondary p-lg-3"></button>
+
+                    </div>
+
+                    <span>Bestseller
+                        New Arrival</span>
+                    <del>was
+                        ₹5,499.94</del>
+                    <div class="button">
+                        ₹2,824.95 save 25%
+                    </div>
+
+                    <small>plus 9 month special financing ✝︎</small>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <img src=" https://www.valuecityfurniture.com/Content/ASI/images/designer-looks-logo.jpg" class="img-thumbnail" alt="">
+                        </div>
+                        <div class="col-sm-9">
+                            Edgehill 6-Piece Dual-Power Reclining Sectional with 3 Reclining Seats
+                        </div>
+                        <span class="" style="margin-left:30px">ComforTECH™</span>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div class="col-sm-4">
+                <div class="card">
+                    <img class="img-display" src="https://rukminim1.flixcart.com/image/832/832/l15bxjk0/office-study-chair/i/s/y/50-8-leatherette-1-kyte-high-back-executive-chairs-rose-designer-original-imagcs8szzcjhgnd.jpeg?q=70" alt=" ">
+
+
+
+                    <div class="btn-group mt-xl-2" role="group" aria-label="Basic example">
+                        <button type="button" class="btn btn-dark p-lg-3"></button>
+                        <button type="button" class="btn btn-secondary p-lg-3"></button>
+
+                    </div>
+
+                    <span>Bestseller
+                        New Arrival</span>
+                    <del>was
+                        ₹8,499.94</del>
+                    <div class="button">
+                        4₹3,824.95 save 45%
+                    </div>
+
+                    <small>plus 3 month special financing ✝︎</small>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <img src=" https://www.valuecityfurniture.com/Content/ASI/images/designer-looks-logo.jpg" class="img-thumbnail" alt="">
+                        </div>
+                        <div class="col-sm-9">
+
+                            Anderson 2-Piece Sectional with Chaise
+                        </div>
+                        <span class="" style="margin-left:30px">More Options Available: Orientation</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- second line images display  -->
+    <hr>
+
+    <div class="container-fluid mt-5">
+
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="card">
+                    <img class="img-display" src="https://rukminim1.flixcart.com/image/612/612/l2nmnww0/office-study-chair/v/u/s/1-pp-polypropylene-58-shdelta-1001-savya-home-100-original-imagdy7tucagv3zg.jpeg?q=70" alt=" ">
+
+
+
+                    <div class="btn-group mt-xl-2" role="group" aria-label="Basic example">
+                        <button type="button" class="btn btn-dark p-lg-3"></button>
+                        <button type="button" class="btn btn-secondary p-lg-3"></button>
+
+                    </div>
+
+                    <span>SAVYA HOME DELTA Fabric </span>
+                    <del>was
+                        ₹11,499</del>
+                    <div class="button">
+                        ₹2,000 save 5%
+                    </div>
+
+                    <small>plus 9 month special financing ✝︎</small>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <img src=" https://www.valuecityfurniture.com/Content/ASI/images/designer-looks-logo.jpg" class="img-thumbnail" alt="">
+                        </div>
+                        <div class="col-sm-9">
+                            Charthouse Trunk Coffee Table
+                        </div>
+                        <span class="" style="margin-left:30px">ComforTECH™</span>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div class="col-sm-4">
+                <div class="card">
+                    <img class="img-display" src="https://rukminim1.flixcart.com/image/832/832/ku2zjww0/office-study-chair/c/1/j/ply-wood-seoul-x-maroon-flk-green-soul-original-imag79z73ggzkkxz.jpeg?q=70" alt=" ">
+
+
+
+                    <div class="btn-group mt-xl-2" role="group" aria-label="Basic example">
+                        <button type="button" class="btn btn-dark "><i class="fas fa-check"></i></button>
+                        <button type="button" class="btn btn-secondary p-lg-3"></button>
+
+                    </div>
+
+                    <span>GREEN SOUL Seoul-X Mid Back Ergonomic Chair|Home</span>
+                    <del>was
+                        ₹13,499.94</del>
+                    <div class="button">
+                        ₹8,824.95 save 45%
+                    </div>
+
+                    <small>plus 3 month special financing ✝︎</small>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <img src=" https://www.valuecityfurniture.com/Content/ASI/images/designer-looks-logo.jpg" class="img-thumbnail" alt="">
+                        </div>
+                        <div class="col-sm-9">
+
+                            Charthouse Rectangular Dining Table and 6 Dining Chairs
+                        </div>
+                        <span class="" style="margin-left:30px">More Options Available: Orientation</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+                <div class="card">
+                    <img class="img-display" src="https://rukminim1.flixcart.com/image/832/832/l15bxjk0/office-study-chair/i/s/y/50-8-leatherette-1-kyte-high-back-executive-chairs-rose-designer-original-imagcs8szzcjhgnd.jpeg?q=70" alt=" ">
+
+
+
+                    <div class="btn-group mt-xl-2" role="group" aria-label="Basic example">
+                        <button type="button" class="btn btn-dark p-lg-3"></button>
+                        <button type="button" class="btn btn-secondary p-lg-3"></button>
+                        <button type="button" class="btn btn-primary"><i class="fas fa-check"></i></button>
+
+                    </div>
+
+                    <span>Bestseller
+                        New Arrival</span>
+                    <del>was
+                        ₹8,499.94</del>
+                    <div class="button">
+                        4₹3,824.95 save 45%
+                    </div>
+
+                    <small>plus 3 month special financing ✝︎</small>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <img src=" https://www.valuecityfurniture.com/Content/ASI/images/designer-looks-logo.jpg" class="img-thumbnail" alt="">
+                        </div>
+                        <div class="col-sm-9">
+
+                            Cora 2-Piece Sectional
+                        </div>
+                        <span class="" style="margin-left:30px">More Options Available: Orientation</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col  text-warning fa-2x">
+                    <i class="fas fa-star-half-alt" class="text-warning fa-4x"></i>
+                    <i class="fas fa-star-half-alt" class="text-warning fa-4x"></i>
+                    <i class="fas fa-star-half-alt" class="text-warning fa-4x"></i>
+                    <i class="fas fa-star-half-alt" class="text-warning fa-4x"></i>
+                    <i class="fas fa-star-half-alt" class="text-warning fa-4x"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+
+    <hr>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="card">
+                    <img class="img-display" src="https://rukminim1.flixcart.com/image/832/832/kingqkw0-0/office-study-chair/i/8/y/pvc-polyvinyl-chloride-g-chair018-vizolt-original-imafye5yy2guwsdf.jpeg?q=70" alt=" ">
+
+
+
+                    <div class="btn-group mt-xl-2" role="group" aria-label="Basic example">
+                        <button type="button" class="btn btn-dark p-lg-3"></button>
+                        <button type="button" class="btn btn-secondary p-lg-3"></button>
+
+                    </div>
+
+                    <span>VIZOLT Mesh Office Adjustable Arm Chair</span>
+                    <del>was
+                        ₹19,499</del>
+                    <div class="button">
+                        ₹3,000 save 50%
+                    </div>
+
+                    <small>
+                        1 YEAR WARRANTY ✝︎</small>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <img src=" https://www.valuecityfurniture.com/Content/ASI/images/designer-looks-logo.jpg" class="img-thumbnail" alt="">
+                        </div>
+                        <div class="col-sm-9">
+                            Charthouse Trunk Coffee Table
+                        </div>
+                        <span class="" style="margin-left:30px">
+                            PVC (Polyvinyl Chloride)</span>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div class="col-sm-4">
+                <div class="card">
+                    <img class="img-display" src="https://rukminim1.flixcart.com/image/832/832/l3xcr680/office-study-chair/w/v/j/1-pu-leatherette-55-medium-back-office-revolving-fh-105-flipkart-original-imagex3yegmwfsb7.jpeg?q=70" alt=" ">
+
+
+
+                    <div class="btn-group mt-xl-2" role="group" aria-label="Basic example">
+                        <button type="button" class="btn btn-warning "><i class="fas fa-check"></i></button>
+                        <button type="button" class="btn btn-dark "></button>
+                        <button type="button" class="btn btn-secondary "></button>
+
+                    </div>
+
+                    <span>GREEN SOUL Seoul-X Mid Back Ergonomic Chair|Home</span>
+                    <del>was
+                        ₹18,499.94</del>
+                    <div class="button">
+                        ₹7,919 save 25%
+                    </div>
+
+                    <small>plus 3 month special financing ✝︎</small>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <img src=" https://www.valuecityfurniture.com/Content/ASI/images/designer-looks-logo.jpg" class="img-thumbnail" alt="">
+                        </div>
+                        <div class="col-sm-9">
+                            High Back Revolving Chair with Ergonomic Design
+                        </div>
+                        <span class="" style="margin-left:30px">More Options Available:
+                            PU Leatherette</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+                <div class="card">
+                    <img class="img-display" src="https://rukminim1.flixcart.com/image/832/832/l15bxjk0/office-study-chair/i/s/y/50-8-leatherette-1-kyte-high-back-executive-chairs-rose-designer-original-imagcs8szzcjhgnd.jpeg?q=70" alt=" ">
+
+
+
+                    <div class="btn-group mt-xl-2" role="group" aria-label="Basic example">
+                        <button type="button" class="btn btn-dark p-lg-3"></button>
+                        <button type="button" class="btn btn-secondary p-lg-3"></button>
+                        <button type="button" class="btn btn-primary"><i class="fas fa-check"></i></button>
+
+                    </div>
+
+                    <span>Bestseller
+                        New Arrival</span>
+                    <del>was
+                        ₹8,499.94</del>
+                    <div class="button">
+                        4₹3,824.95 save 45%
+                    </div>
+
+                    <small>plus 3 month special financing ✝︎</small>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <img src=" https://www.valuecityfurniture.com/Content/ASI/images/designer-looks-logo.jpg" class="img-thumbnail" alt="">
+                        </div>
+                        <div class="col-sm-9">
+
+                            Cora 2-Piece Sectional
+                        </div>
+                        <span class="" style="margin-left:30px">More Options Available: Orientation</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col  text-warning fa-2x" style="text-align: end;">
+                    <i class="fas fa-star-half-alt" class="text-warning fa-4x"></i>
+                    <i class="fas fa-star-half-alt" class="text-warning fa-4x"></i>
+                    <i class="fas fa-star-half-alt" class="text-warning fa-4x"></i>
+                    <i class="fas fa-star-half-alt" class="text-warning fa-4x"></i>
+                    <i class="fas fa-star-half-alt" class="text-warning fa-4x"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <br>
+    <hr>
+
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="card">
+                    <img class="img-display" src="https://rukminim1.flixcart.com/image/832/832/xif0q/office-study-chair/f/n/z/1-cast-iron-48-3-comfortable-chair-office-study-computer-library-original-imaggvvwjzhfxg8b.jpeg?q=70" alt=" ">
+
+
+
+                    <div class="btn-group mt-xl-2" role="group" aria-label="Basic example">
+                        <button type="button" class="btn btn-dark p-lg-3"></button>
+                        <button type="button" class="btn btn-secondary p-lg-3"></button>
+
+                    </div>
+
+                    <span>SOMRAJ Leatherette Office Arm Chair (Black, Pre-assembled)</span>
+                    <del>was
+                        ₹9,499</del>
+                    <div class="button">
+                        ₹2,374 save 50%
+                    </div>
+
+                    <small>
+
+                        Leatherette ✝︎</small>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <img src=" https://www.valuecityfurniture.com/Content/ASI/images/designer-looks-logo.jpg" class="img-thumbnail" alt="">
+                        </div>
+                        <div class="col-sm-9">
+                            Charthouse Trunk Coffee Table
+                        </div>
+                        <span class="" style="margin-left:30px">
+
+                            Armrest</span>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div class="col-sm-4">
+                <div class="card">
+                    <img class="img-display" src="https://rukminim1.flixcart.com/image/612/612/xif0q/outdoor-chair/z/l/a/57-1-pp-polypropylene-46-0-4-plasteel-arm-chair-with-stainless-original-imaghvbfubfm9hxr.jpeg?q=70" alt=" ">
+
+
+
+                    <div class="btn-group mt-xl-2" role="group" aria-label="Basic example">
+                        <button type="button" class="btn btn-warning "><i class="fas fa-check"></i></button>
+                        <button type="button" class="btn btn-dark "></button>
+                        <button type="button" class="btn btn-secondary "></button>
+
+                    </div>
+
+                    <span>Italica Furniture Plasteel Arm Chair</span>
+                    <del>was
+                        ₹4,499.94</del>
+                    <div class="button">
+                        ₹3,919 save 5%
+                    </div>
+
+                    <small>plus 3 month special financing ✝︎</small>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <img src=" https://www.valuecityfurniture.com/Content/ASI/images/designer-looks-logo.jpg" class="img-thumbnail" alt="">
+                        </div>
+                        <div class="col-sm-9">
+                            High Back Revolving Chair with Ergonomic Design
+                        </div>
+                        <span class="" style="margin-left:30px">More Options Available:
+                            PU Leatherette</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+                <div class="card">
+                    <img class="img-display" src="https://rukminim1.flixcart.com/image/832/832/l4d2ljk0/office-study-table/h/a/j/740-wrought-iron-engineered-wood-ce-40-cauvery-enterprises-original-imagfa5zmgfz2fjp.jpeg?q=70" alt=" ">
+
+
+
+                    <div class="btn-group mt-xl-2" role="group" aria-label="Basic example">
+                        <button type="button" class="btn btn-dark p-lg-3"></button>
+                        <button type="button" class="btn btn-secondary p-lg-3"></button>
+                        <button type="button" class="btn btn-primary"><i class="fas fa-check"></i></button>
+
+                    </div>
+
+                    <span>Cauvery enterprises special Fabric Study Folding Chair </span>
+                    <del>was
+                        ₹12,499.94</del>
+                    <div class="button">
+                        ₹1,824.95 save 55%
+                    </div>
+
+                    <small>plus 3 month special financing ✝︎</small>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <img src=" https://www.valuecityfurniture.com/Content/ASI/images/designer-looks-logo.jpg" class="img-thumbnail" alt="">
+                        </div>
+                        <div class="col-sm-9">
+
+
+                            Fabric
+                        </div>
+                        <span class="" style="margin-left:30px">More Options Available:
+                            INDIA</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col  text-warning fa-2x" style="text-align: center;">
+                    <i class="fas fa-star-half-alt" class="text-warning fa-4x"></i>
+                    <i class="fas fa-star-half-alt" class="text-warning fa-4x"></i>
+                    <i class="fas fa-star-half-alt" class="text-warning fa-4x"></i>
+                    <i class="fas fa-star-half-alt" class="text-warning fa-4x"></i>
+                    <i class="fas fa-star-half-alt" class="text-warning fa-4x"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-8">
+
+                <nav aria-label="Page navigation example ">
+                    <ul class="pagination text-center ">
+                        <li class=""><a class="page-link " href="# ">Previous</a></li>
+                        <li class=""><a class="page-link " href="# ">1</a></li>
+                        <li class=""><a class="page-link " href="# ">2</a></li>
+                        <li class=""><a class="page-link " href="# ">3</a></li>
+                        <li class=""><a class="page-link " href="# ">4</a></li>
+                        <li class=""><a class="page-link " href="# ">5</a></li>
+                        <li class=""><a class="page-link " href="# ">6</a></li>
+                        <li class=""><a class="page-link " href="# ">Next</a></li>
+                    </ul>
+                </nav>
+
+            </div>
+            <div class="col-sm-4">
+                <input type="text" placeholder="select 10  Images" class="form-container">
+                <select id="cars">
+                    <option value="select 10  Images">select 10 Images</option>
+                    <option value="select 20 Images">select 20 Images</option>
+                    <option value="select 30  Images">30 Images</option>
+                    <option value="select 40  Images" selected>select 40 Images</option>
+                </select>
+
+
+            </div>
+        </div>
+    </div>
+
+    <hr>
+    <p class="lead   content">
+        *Sale offer expires 10/17/22. Promotions and Discounts are not valid towards Top Deals, Doorbusters, Tempur-Pedic, Stearns & Foster, Sealy Posturepedic Plus Hybrid, Clearance, previous purchases, gift cards, delivery charges, or Pure Promise. Other restrictions
+        may apply. Selection may vary by store. Cannot be combined with any other discount. Not valid with SetPay, 60, 48 or 36 month financing options. § If you find a lower price, we will match it. Valid only at time of purchase on competitors’ identical
+        product advertised at a lower price. Customer must provide proof from a competitor in the form of a printed or digital ad, email or website. See store manager for details. Offer applies to single-receipt qualifying purchases. †, †† Subject to
+        credit approval. Minimum monthly payments required. Click here for details.
+    </p>
+
+
+    <div class="container-fluid   footer">
+        <div class="row bg-dark text-white-50">
+            <div class="col-sm-3 text-white">
+                <h6>Shop with VCF</h6>
+                <a href="" class="text-white  text-decoration-none">Find a Store</a>
+                <a href="" class="text-white  text-decoration-none">Weekly Circular</a>
+                <a href="" class="text-white  text-decoration-none">Easy Pass</a>
+                <a href="" class="text-white  text-decoration-none">Financing Options</a>
+                <a href="" class="text-white  text-decoration-none">Manage My Value Plus Card</a>
+                <a href="" class="text-white  text-decoration-none">Best Sellers</a>
+                <a href="" class="text-white  text-decoration-none">New Arrivals</a>
+                <a href="" class="text-white  text-decoration-none">What's On Sale</a>
+
+            </div>
+
+
+
+
+            <div class="col-sm-3 text-white">
+                <h6>Customer Care</h6>
+                <a href="" class="text-white  text-decoration-none">FAQ</a>
+                <a href="" class="text-white  text-decoration-none">Track My Order</a>
+                <a href="" class="text-white  text-decoration-none">Deliveries, Shipping, and Pick-up</a>
+                <a href="" class="text-white  text-decoration-none">Refunds and Exchanges</a>
+                <a href="" class="text-white  text-decoration-none">Policies and Disclaimers</a>
+                <a href="" class="text-white  text-decoration-none">Contact Us</a>
+                <a href="" class="text-white  text-decoration-none">(888) 751-8552</a>
+
+
+            </div>
+
+
+            <div class="col-sm-3 text-white">
+                <h6>Customer Care</h6>
+                <a href="" class="text-white  text-decoration-none">About Us <i class="fas fa-angle-double-right"></i>
+                </a><br>
+                <a href="" class="text-white  text-decoration-none">Careers <i
+                        class="fas fa-angle-double-right"></i></a>
+
+            </div>
+
+
+
+            <div class="col-sm-3 text-white">
+                <p>Get the latest updates and promotions in your inbox. We won’t share or sell your email.</p>
+
+                <br>
+                <input type="email" placeholder="Enter your email" class="form-control">
+                <hr>
+
+
+                <i class="fab fa-facebook  fa-4x"></i>
+                <i class="fab fa-instagram  fa-4x"></i>
+                <i class="fab fa-twitter fa-4x"></i>
+                <i class="fab fa-youtube  fa-4x"></i>
+                <i class="fab fa-whatsapp-square  fa-4x"></i>
+            </div>
+        </div>
+    </div>
+
+
+    <script src=" https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js "></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js " integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM " crossorigin="anonymous ">
+    </script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+
+    <!-- js -->
+
+    <script src="js/furniture.js "></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js " integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p " crossorigin="anonymous ">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js " integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF " crossorigin="anonymous ">
+    </script>
+
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js " integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW " crossorigin="anonymous ">
+    </script>
+</body>
+
+</html>
+
+</html>
+
+</html>
+
+</html>
